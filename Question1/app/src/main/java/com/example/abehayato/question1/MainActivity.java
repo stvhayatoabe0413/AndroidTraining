@@ -2,6 +2,7 @@ package com.example.abehayato.question1;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.logging.Logger;
 
@@ -20,10 +21,15 @@ public class MainActivity extends AppCompatActivity {
         double d = 0.0;
 
         // ログの出力
-        Logger logger = Logger.getLogger("MainActivity"); // 引数の文字列は通常クラス名にするものらしい。
-        logger.info("Boolean = " + b);
-        logger.info("String = " + s);
-        logger.info("Int = " + n);
-        logger.info("Double = " + d);
+//        Logger logger = Logger.getLogger("MainActivity"); // 引数の文字列は通常クラス名にするものらしい。
+//        logger.info("Boolean = " + b);
+//        logger.info("String = " + s);
+//        logger.info("Int = " + n);
+//        logger.info("Double = " + d);
+        // Logger から Log に変更
+        Log.d("変数宣言","Boolean = " + b);
+        Log.d("変数宣言","String = " + s);
+        Log.d("変数宣言","Int = " + n);
+        Log.d("変数宣言","Double = " + d);
     }
 }
