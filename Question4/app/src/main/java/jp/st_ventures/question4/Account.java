@@ -1,5 +1,7 @@
 package jp.st_ventures.question4;
 
+import android.util.Log;
+
 import java.util.logging.Logger;
 
 /*
@@ -29,7 +31,10 @@ public class Account {
     public Account(String name,int age,String gender,String customerLanguage){
         // nullチェックを行う。
         if(name==null || gender==null || customerLanguage==null) {
-            Exception; //TODO
+            Log.w("Account Class Eroor","属性にnullは設定できません。");
+            return;
+        }else if(age < 0) { // 年齢は0以上
+            Log.w("Account Class Eroor","年齢に0未満は設定できません。");
             return;
         }else{
             this.name = name;
@@ -40,13 +45,14 @@ public class Account {
     }
 
     public void outputLogOfStatus(){
-        Logger logger = Logger.getLogger("Account");
+        // Logger logger = Logger.getLogger("Account");     // Logに変更
         if(gender == "男性") {
-            logger.info(String.format("%s君は、%sが得意な%d歳です。",name,customerLanguage,age));
+            Log.d("internship",String.format("%s君は、%sが得意な%d歳です。",name,customerLanguage,age));
         }else if(gender == "女性"){
-            logger.info(String.format("%sさんは、%sが得意な%d歳です。",name,customerLanguage,age));
+            Log.d("internship",String.format("%sさんは、%sが得意な%d歳です。",name,customerLanguage,age));
         }else{ // どちらでもなければそもそも異常なのでエラーを出す。
-            Exception;  // TODO
+            Log.e("Account Class Error","性別に不正な値が設定されています。");
+            return;
         }
     }
 

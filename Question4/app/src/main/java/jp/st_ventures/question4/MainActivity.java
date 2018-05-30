@@ -3,6 +3,8 @@ package jp.st_ventures.question4;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.Arrays;
+
 /*
  * Accountクラスコンストラクタを作成し、インターン(internship)の参加者の一覧をコンソールにログを出力する。
  * Accountクラスには、下記のプロパティとメソッドを定義する。
@@ -31,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
                                                         new Account("森田明美",20,"女性","中国語"),
                                                         new Account("木村拓郎",19,"男性","フランス語")};
 
-        internshipParticipants.
+        // internshipメンバーの一覧をログに出力する。
+        Arrays.stream(internshipParticipants).forEach(s -> s.outputLogOfStatus());
 
     }
 
