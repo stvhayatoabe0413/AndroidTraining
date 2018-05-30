@@ -2,6 +2,7 @@ package jp.st_ventures.question3;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.Arrays;
 
@@ -16,24 +17,37 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // if文
-        if(true) {
-            System.out.println("if文の結果");
+        if(1+1==2) {
+//            System.out.println("if文の結果");
+            Log.d("if文の結果","正しい");
+        }else{
+            Log.d("if文の結果","間違い");
         }
 
         // if ~ else文
-        if(false) {
+        if(1+1==3) {
+            Log.d("if ~ else文の結果","正しい");
         }else {
-            System.out.println("if ~ else文の結果");
+//            System.out.println("if ~ else文の結果");
+            Log.d("if ~ else文の結果","間違い");
         }
 
         // if ~ else if文
-        if(false) {
-        }else if(true) {
-            System.out.println("if ~ else if文の結果");
+        if(1+1==3) {
+            Log.d("if ~ else if文の結果","正しい1");
+        }else if(1+1==2) {
+//            System.out.println("if ~ else if文の結果");
+            Log.d("if ~ else if文の結果","正しい2");
+        }else{
+            Log.d("if ~ else if文の結果","間違い");
         }
 
         // 三項演算子
-        System.out.println("三項演算子 ( 1 > 2 ? true : false ) = " + (1 > 2 ? true : false));
+        int target_1 = 1;
+        int target_2 = 5;
+        String answer = target_1 > target_2 ? "target_1 は target_2 よりも大きい" : "target_1 は target_2 よりも小さい";
+//        System.out.println("三項演算子 ( 1 > 2 ? true : false ) = " + (1 > 2 ? true : false));
+        Log.d("三項演算子",answer);
 
         // while文
         int count = 0;
