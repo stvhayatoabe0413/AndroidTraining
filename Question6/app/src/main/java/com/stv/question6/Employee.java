@@ -13,17 +13,19 @@ package com.stv.question6;
  *   */
 public abstract class Employee {
 
+    // 性別の扱いをわかりやすくするために定数としておく。
+    public final static boolean GENDER_MALE = true;
+    public final static boolean GENDER_FEMALE = false;
+
     // ベース給料を返すメソッドを用意するということは、
     // 直接他クラスから要素を編集出来るものではないと
     // 予想されるため、カプセル化しておく。
     // このクラスは継承して使われるのでprotectedとする。
     protected String name;
     protected int age;
-    protected boolean gendar;
+    protected boolean gender;
     protected String address;
     protected double baseSalary;
 
-    public double computeYearlyPay(){
-        return baseSalary;
-    }
+    public abstract double computeYearlyPay();
 }
