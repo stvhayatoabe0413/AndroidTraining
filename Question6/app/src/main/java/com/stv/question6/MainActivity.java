@@ -24,6 +24,7 @@ import android.os.Bundle;
 *   getBonusByRank()
 * */
 
+/**  */
 public class MainActivity extends Activity {
 
     @Override
