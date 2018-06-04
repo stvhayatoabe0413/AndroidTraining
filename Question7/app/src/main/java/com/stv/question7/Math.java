@@ -4,9 +4,9 @@ import android.util.Log;
 
 public class Math {
 
-    int a;
-    int b;
-    Result result;
+    private int a;
+    private int b;
+    private Result result;
 
     /** 結果をResultにパスするためにResultを受け取っている。 */
     public Math(int a,int b,Result result){
