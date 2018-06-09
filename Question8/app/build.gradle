@@ -16,6 +16,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        // lintファイルを直指定するため
+        lintConfig rootProject.file("lint.xml")
+        // Errorを出力するため
+        abortOnError true
+        // エラー箇所を出力するため
+        noLines false
+        // エラー内容を出力するため
+        textReport true
+    }
 }
 
 dependencies {
@@ -25,3 +39,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
