@@ -1,0 +1,86 @@
+package jp.st_ventures.question3;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+
+import java.util.Arrays;
+
+/**
+ *  if文、if〜else文、if〜else if文、三項演算子、while型、do-while型、for文、高速列挙構文、switchを利用したプログラムを作成し、結果をコンソールに出力する。
+*/
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // if文
+        if(1+1==2) {
+            Log.d("if文の結果","正しい これが出たら正常");
+        }else{
+            Log.d("if文の結果","間違い");
+        }
+
+        // if ~ else文
+        if(1+1==3) {
+            Log.d("if ~ else文の結果","正しい");
+        }else {
+            Log.d("if ~ else文の結果","間違い これが出たら正常");
+        }
+
+        // if ~ else if文
+        if(1+1==3) {
+            Log.d("if ~ else if文の結果","正しい1");
+        }else if(1+1==2) {
+            Log.d("if ~ else if文の結果","正しい2 これが出たら正常");
+        }else{
+            Log.d("if ~ else if文の結果","間違い");
+        }
+
+        // 三項演算子
+        int target_1 = 1;
+        int target_2 = 5;
+        String answer = target_1 > target_2 ? "target_1 は target_2 よりも大きい" : "target_1 は target_2 よりも小さい";
+        Log.d("三項演算子",String.format("target_1 = %d , target_2 = %d -> %s",target_1,target_2,answer));
+
+        // while文
+        int count = 0;
+        while(count<4) {
+            Log.d("while文",String.format("countが4未満ならば繰り返し count = " + count++));
+        }
+
+        // do-while型
+        count = 0;
+        do {
+            Log.d("do-while型",String.format( "最低1回動作。countが0未満ならば繰り返し count = " + count++));
+        } while (count<0);
+
+        // for文
+        for(int i=0; i<3; i++) {
+            Log.d("for文",String.format("i = " + i));
+        }
+
+        // 拡張for文(高速列挙構文の代用)
+        String[] strings = {"aaa","bbb","ccc"};
+        count = 0;
+        for(String s : strings) {
+            Log.d("拡張for文",String.format("中身%d番目 = %s \r\n",count++,s));
+        }
+
+        // forEachメソッド
+        int[] counts = new int[]{0};        // ラムダ式の中からは通常外の変数は変更出来ないが、配列ならばOK。
+        Arrays.stream(strings).forEach(s -> Log.d("forEachメソッド",String.format("中身%d番目 = %s \r\n",counts[0]++,s)));
+
+        // swich文
+        String str = "STV";
+        switch (str) {
+            case "STV":
+                Log.d("switch文","breakしていればここで終わるが、");
+            default:
+                Log.d("switch文","breakしていなければここも出る。");
+                break;
+        }
+    }
+}
