@@ -21,12 +21,6 @@ public class MainActivity extends AppCompatActivity {
         double d = 0.0;
 
         // ログの出力
-//        Logger logger = Logger.getLogger("MainActivity"); // 引数の文字列は通常クラス名にするものらしい。
-//        logger.info("Boolean = " + b);
-//        logger.info("String = " + s);
-//        logger.info("Int = " + n);
-//        logger.info("Double = " + d);
-        // Logger から Log に変更
         Log.d("変数宣言","Boolean = " + b);
         Log.d("変数宣言","String = " + s);
         Log.d("変数宣言","Int = " + n);
