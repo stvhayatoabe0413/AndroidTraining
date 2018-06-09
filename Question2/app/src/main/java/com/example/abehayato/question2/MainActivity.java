@@ -32,11 +32,6 @@ public class MainActivity extends AppCompatActivity {
         Arrays.stream(strings).forEach(s -> hashSet.add(s));
 
         // ログを出力
-//        Logger logger = Logger.getLogger("Main");
-//        logger.info("ArrayList = " + arrayList);
-//        logger.info("HashMap = " + hashMap);
-//        logger.info("HashSet = " + hashSet);
-        // Logger から Log に変更
         arrayList.forEach(s -> Log.d("ArrayList ",s));
         hashMap.forEach((key,value) -> Log.d("HashMap ",value));
         hashSet.forEach(s -> Log.d("HashSet ",s));
