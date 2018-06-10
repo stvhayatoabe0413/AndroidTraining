@@ -2,6 +2,7 @@ package com.stv.question9;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 /*
 * 任意の画像を表示する。
@@ -17,7 +18,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        ImageView donburiImageView = (ImageView)findViewById(R.id.donburiImageView);
 
     }
 }
