@@ -5,10 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.logging.Logger;
 
 // ArrayList型、HashMap型、HashSet型の変数を定義し、
 // いくつかの中身を入れ、中身をそれぞれコンソールにログで出力する。(Log)
@@ -25,15 +23,19 @@ public class MainActivity extends AppCompatActivity {
         HashSet<String> hashSet = new HashSet();
 
         // 変数への代入
-        String[] strings = new String[]{"1","2","3"};
-        Arrays.stream(strings).forEach(s -> arrayList.add(s));
-        int[] keys = new int[]{0};   // keyとして上書きしながら使う配列。
-        Arrays.stream(strings).forEach(s -> hashMap.put(keys[0]++,s));
-        Arrays.stream(strings).forEach(s -> hashSet.add(s));
+        String[] strings = new String[]{"ArrayList1","ArrayList2","ArrayList3"};
+        for(String str:strings){arrayList.add(str);}
+
+        // HashMapではKeyが必要なのでfor文でiをKeyとして使う。
+        strings = new String[]{"HashMap1","HashMap2","HashMap3"};
+        for(int i=0;i<strings.length;i++){hashMap.put(i,strings[i]);}
+
+        strings = new String[]{"HashSet1","HashSet2","HashSet3"};
+        for(String str:strings){hashSet.add(str);}
 
         // ログを出力
-        arrayList.forEach(s -> Log.d("ArrayList ",s));
-        hashMap.forEach((key,value) -> Log.d("HashMap ",value));
-        hashSet.forEach(s -> Log.d("HashSet ",s));
+        for(String str:arrayList){Log.d("ArrayList",str);}
+        for(int i=0;i<hashMap.size();i++){Log.d("HashMap",hashMap.get(i));}
+        for(String str:hashSet){Log.d("HashSet",str);}
     }
 }
