@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Question8</string>
+    <string name="textViewInMainActivity">初めのAndroidアプリをスタートしました。</string>
+</resources>
